@@ -1,0 +1,26 @@
+{
+	"@context":"http://tiny.cc/dymo-context",
+	"@id":"deformationRendering",
+	"@type":"Rendering",
+	"mappings":[
+		{
+			"domainDims":[
+				{"name":"onset","type":"Feature"},
+				{"name":"onsetS","type":"Feature"},
+				{"name":"Deform time","type":"Slider"}
+			],
+			"function":{"args":["a","b","c"],"body":"return a+((2*c-1)*(a-(b/33*29)));"},
+			"dymos":{"args":["d"],"body":"return d.getLevel() == 1;"},
+			"parameter":"Onset"
+		},
+		{
+			"domainDims":[
+				{"name":"velocity","type":"Feature"},
+				{"name":"Deform dynamics","type":"Slider"}
+			],
+			"function":{"args":["a","c"],"body":"return 0.5+((4*c-2)*(a-64)/128);"},
+			"dymos":{"args":["d"],"body":"return d.getLevel() == 1;"},
+			"parameter":"Amplitude"
+		}
+	]
+}

@@ -1,0 +1,41 @@
+{
+	"@context":"http://tiny.cc/dymo-context",
+	"@id":"decompositionRendering",
+	"@type":"Rendering",
+	"mappings":[
+		{
+			"domainDims":[{"name":"pitch","type":"Feature"},{"name":"radius","type":"Slider"}],
+			"function":{"args":["a","b"],"body":"return 3*b*Math.cos(a%12/12*2*Math.PI);"},
+			"dymos":{"args":["d"],"body":"return d.getLevel() == 1;"},
+			"parameter":"Pan"
+		},
+		{
+			"domainDims":[{"name":"pitch","type":"Feature"},{"name":"radius","type":"Slider"}],
+			"function":{"args":["a","b"],"body":"return 3*b*Math.sin(a%12/12*2*Math.PI);"},
+			"dymos":{"args":["d"],"body":"return d.getLevel() == 1;"},
+			"parameter":"Distance"
+		},
+		{
+			"domainDims":[{"name":"pitch","type":"Feature"},{"name":"pitch ratio","type":"Slider"}],
+			"function":{"args":["a","b"],"body":"return b*(Math.cos(a%12/12*2*Math.PI))+1;"},
+			"dymos":{"args":["d"],"body":"return d.getLevel() == 1;"},
+			"parameter":"PlaybackRate"
+		},
+		{
+			"domainDims":[{"name":"onset","type":"Feature"}],
+			"dymos":{"args":["d"],"body":"return d.getLevel() == 1;"},
+			"parameter":"Onset"
+		},
+		{
+			"domainDims":[{"name":"orientation","type":"Slider"}],
+			"function":{"args":["a"],"body":"return 360*a;"},
+			"parameter":"ListenerOrientation"
+		},
+		{
+			"domainDims":[{"name":"reverb","type":"Slider"}],
+			"function":{"args":["a"],"body":"return 10*a;"},
+			"dymos":["dymo0"],
+			"parameter":"Reverb"
+		}
+	]
+}

@@ -1,0 +1,29 @@
+{
+	"dymo":"dymo0",
+	"mappings":[
+		{
+			"domainDims":[{
+				"name":"Orientation",
+				"type":"Slider"
+			}],
+			"function":{"args":["a"],"body":"return 360*a;"},
+			"parameter":"ListenerOrientation"
+		},
+		{
+			"domainDims":[{
+				"name":"Pan",
+				"type":"Slider"
+			}],
+			"dymos":["dymo0"],
+			"parameter":"Pan"
+		},
+		{
+			"domainDims":[{
+				"name":"Distance",
+				"type":"Slider"
+			}],
+			"dymos":["dymo0"],
+			"parameter":"Distance"
+		}
+	]
+}

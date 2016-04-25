@@ -1,0 +1,32 @@
+{
+	"@context":"http://tiny.cc/dymo-context",
+	"@id":"achAchBachRendering",
+	"@type":"Rendering",
+	"mappings":[
+		{
+			"domainDims":[
+				{"name":"onset","type":"Feature"},
+				{"name":"onsetS","type":"Feature"},
+				{"name":"Deform","type":"Slider"}
+			],
+			"function":{"args":["a","b","c"],"body":"return a+((3*c-1)*(a-(b/9*23)));"},
+			"dymos":{"args":["d"],"body":"return d.getLevel() == 1;"},
+			"parameter":"Onset"
+		},
+		{
+			"domainDims":[
+				{"name":"duration","type":"Feature"},
+				{"name":"durationS","type":"Feature"},
+				{"name":"Deform","type":"Slider"}
+			],
+			"function":{"args":["a","b","c"],"body":"return a/(a+((3*c-1)*(a-(b/9*23))));"},
+			"dymos":{"args":["d"],"body":"return d.getLevel() == 1;"},
+			"parameter":"TimeStretchRatio"
+		},
+		{
+			"domainDims":[{"name":"duration","type":"Feature"}],
+			"function":{"args":["a"],"body":"return 0.2;"},
+			"dymos":["dymo0"],"parameter":"Reverb"
+		}
+	]
+}
